@@ -1,0 +1,62 @@
+def function1(ids, names, exams, hw1s, hw2s):
+    info_std={}
+    cnt=0
+    for each_name in names:
+        info_each={}
+        info_each["name"] = each_name
+        info_each["exam"] = exams[cnt]
+        info_each["hw1"] = hw1s[cnt]
+        info_each["hw2"] = hw2s[cnt]
+    
+        info_std[ids[cnt]] = info_each
+        cnt = cnt+1
+    return(info_std)
+        
+
+def function2(user_input):
+    if user_input >= 0:
+        if user_input < 6:
+            return (user_input)
+        else:
+            return(-1)
+    else:
+        return(-1)
+
+def function3(result):
+    id_ = int(input("학번을 입력하세요: "))
+    if id_%10000 > 9999 or id_%10000 < 0:
+        return(0)
+    
+    if id_//10000 < 2000 or id_//10000 > 2019:
+        return(0)
+    
+    name = input("이름을 입력하세요: ")
+
+    exam = int(input("시험 성적을 입력하세요: "))
+    if exam > 100 or exam < 0:
+        return(0)
+
+    hw1 = int(input("숙제1 성적을 입력하세요: "))
+    if hw1 > 100 or hw1 < 0:
+        return(0)
+    
+    hw2 = int(input("숙제2 성적을 입력하세요: "))
+    if hw2 > 100 or hw2 < 0:
+        return(0)
+    
+    info_new={}
+    info_new["name"] = name
+    info_new["exam"] = exam
+    info_new["hw1"] = hw1
+    info_new["hw2"] = hw2
+    result[id_]=info_new
+ 
+
+def function4(result):
+    pass
+    
+def function5(result):
+    pass
+
+def function6(result):
+    pass
